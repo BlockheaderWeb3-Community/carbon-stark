@@ -12,7 +12,7 @@ function Navbar() {
 
       {!connection?.isConnected ? (
         <button
-          className="rounded-[50px] bg-primaryColor px-8 py-[10px] text-sm font-semibold text-white transition-all duration-150 ease-in-out hover:opacity-85"
+          className="rounded-[5px] bg-primaryColor px-8 py-[10px] text-sm font-semibold text-white transition-all duration-150 ease-in-out hover:opacity-85"
           onClick={() => connectWallet()}
         >
           Connect Wallet
