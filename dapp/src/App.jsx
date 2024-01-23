@@ -9,6 +9,7 @@ import ProjectsPage from "./pages/ProjectsPage";
 import ImpactPage from "./pages/ImpactPage";
 import ProfilePage from "./pages/ProfilePage";
 import CarbonFootprintPage from "./pages/CarbonFootprintPage";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
   return (
@@ -26,9 +27,23 @@ function App() {
           >
             <Route index element={<Navigate replace to="connect" />} />
             <Route path="connect" element={<LandingPage />} />
-            <Route path="home" element={<HomePage />} />
+            <Route
+              path="home"
+              element={
+                <ProtectedRoute>
+                  <HomePage />
+                </ProtectedRoute>
+              }
+            />
           </Route>
-          <Route path="/app" element={<AppLayoutMain />}>
+          <Route
+            path="/app"
+            element={
+              <ProtectedRoute>
+                <AppLayoutMain />
+              </ProtectedRoute>
+            }
+          >
             <Route index element={<Navigate replace to="dashboard" />} />
             <Route path="dashboard" element={<DashboardPage />} />
             <Route path="projects" element={<ProjectsPage />} />
